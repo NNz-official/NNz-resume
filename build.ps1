@@ -19,7 +19,7 @@ if ($typstCommand) {
 $outputDirectory = Join-Path $resumeRoot 'output/pdf'
 New-Item -ItemType Directory -Path $outputDirectory -Force | Out-Null
 $sourcePath = Join-Path $resumeRoot 'resume.typ'
-$outputPath = Join-Path $outputDirectory '周鸿展-简历-内容核对版.pdf'
+$outputPath = Join-Path $outputDirectory '周鸿展-简历.pdf'
 $operation = if ($Watch) { 'watch' } else { 'compile' }
 Write-Host "Typst: $compilerPath"
 & $compilerPath $operation --root $resumeRoot $sourcePath $outputPath

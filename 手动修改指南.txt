@@ -11,7 +11,8 @@ education：学校、专业学位与时间。
 skills：技术能力，每项有 label（类别）和 detail（说明）。
 recent_projects：第一页重点项目。
 additional_projects：第二页近期项目。
-maintenance_summary：第二页的一行维护项目说明。
+internship_projects：第二页的两项实习项目。
+hidden_projects：暂不展示的维护项目，仅保留备忘。
 historical_projects：早期项目素材库；默认只显示前两项。
 awards：奖项列表。
 
@@ -75,24 +76,24 @@ content/verification.yaml 是事实核对清单，也不会直接显示在 PDF�
   & 'D:/Data/code/nodesk/resume/build.ps1'
 
 脚本会自动找到已安装的 Typst，输出到：
-  D:/Data/code/nodesk/resume/output/pdf/周鸿展-简历-内容核对版.pdf
+  D:/Data/code/nodesk/resume/output/pdf/周鸿展-简历.pdf
 
 若 PowerShell 的脚本执行策略阻止运行，可直接使用 Typst，不必调整系统策略：
   Set-Location 'D:/Data/code/nodesk/resume'
-  typst compile resume.typ 'output/pdf/周鸿展-简历-内容核对版.pdf'
+  typst compile resume.typ 'output/pdf/周鸿展-简历.pdf'
 
 希望每次保存 YAML 后自动编译，执行：
   & 'D:/Data/code/nodesk/resume/build.ps1' -Watch
 然后让该 PowerShell 窗口保持运行，编辑并保存 resume.yaml，PDF 会自动更新。
 也可以直接执行 typst watch：
   Set-Location 'D:/Data/code/nodesk/resume'
-  typst watch resume.typ 'output/pdf/周鸿展-简历-内容核对版.pdf'
+  typst watch resume.typ 'output/pdf/周鸿展-简历.pdf'
 按 Ctrl+C 停止监听。PDF 阅读器可能需要刷新；报文件占用时先关闭 PDF 再重新编译。
 
 6. 页数和版式怎么调
 
 resume.typ 管版式，resume.yaml 管内容。日常不要改模板中的函数、循环与括号。
-当前模板明确在两个重点项目之后换到第二页；新增内容过多可能变成三页。
+当前模板在第一页的三个重点项目和教育背景之后换到第二页；新增内容过多可能变成三页。
 先精简重复说明，或将项目移动到第二页，不要先缩小正文字号。
 layout.historical_project_count 控制显示前几个早期项目，当前为 2；改成 3 会显示主体分割项目，但可能增加页数。
 需要调整颜色：打开 resume.typ，修改 accent 的十六进制色值。
@@ -109,3 +110,9 @@ profile.footer_label 可改为“简历”，profile.version 改为对应版本�
 
 打开最终 PDF，检查页数、段落是否被挤出页面、日期是否换行，以及姓名电话邮箱是否准确。
 试着复制一段 PDF 文字，确认文本正常。新改内容特别注意项目职责与成果依据。
+
+2026.11 版补充
+模板不再显示 stack 字段，但仍保留为技术素材。context 用于显示角色和关注重点。
+PDF 使用面向读者的项目名称；仓库映射仅在 project-roles.yaml 内维护。
+四个待回忆的维护项目保存在 hidden_projects，不参与排版。要恢复时，在项目列表增加正式条目，不必删除备忘记录。
+旧“内容核对版.pdf”是历史输出，当前请以“周鸿展-简历.pdf”为准。

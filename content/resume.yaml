@@ -3,98 +3,110 @@ profile:
   role: 全栈开发 / AI 应用工程
   phone: '18968783080'
   email: 1119208620@qq.com
-  summary: 现任 Agent 工程专家，主要负责企业工作流、文档解析、知识库与技能资产服务等项目，并接手维护 Agent 执行与视觉模型服务系统。具有数字人、三维重建与计算机视觉背景，经历覆盖算法实现、服务端业务和前端交互。
-  draft_note: 内容核对版 · 教育状态与项目时间待补充
-  version: '2026.10'
+  summary: 现任 Agent 工程专家，关注业务需求如何转化为可执行、可排查的 AI 应用方案。在 AI 辅助开发模式下，侧重业务理解、沟通对齐、方案构思与问题定位，推进工作流、文档处理及审核观测项目交付。
+  draft_note: ''
+  version: '2026.11'
   footer_label: 内容核对版
 layout:
   historical_project_count: 2
 work_experience:
-  - company: 杭州没有桌子人工智能科技有限公司
-    role: Agent 工程专家
-    dates: 2026.06 - 至今
-    summary: 主要负责工作流编排、文档解析、知识库、技能资产与 AI 审核相关项目；接手 Agent 执行平台和视觉模型服务的后续维护更新。
-  - company: 杭州没有桌子人工智能科技有限公司
-    role: 算法实习生
-    dates: 2025.06 - 2025.12
-    summary: ''
+- company: 杭州没有桌子人工智能科技有限公司
+  role: Agent 工程专家
+  dates: 2026.06 - 至今
+  summary: 6—8 月接手视觉模型服务的维护更新；8 月起主要负责企业工作流与审核观测项目，并合作参与文档感知工作台；10 月起负责知识库与技能资产服务。侧重业务梳理、方案构思、沟通对齐与问题排查。
+- company: 杭州没有桌子人工智能科技有限公司
+  role: 算法实习生
+  dates: 2025.06 - 2025.12
+  summary: 主要负责通用文档解析服务（6—12 月）与知识中心文档解析服务（10—12 月），围绕多格式文档接入、结构化输出与服务稳定性开展建设，积累文档处理链路的业务理解和排障经验。
 education:
-  - school: 杭州电子科技大学
-    degree: 计算机技术 · 硕士阶段
-    dates: 2023.09 入学，毕业状态待确认
-  - school: 杭州电子科技大学
-    degree: 计算机科学与技术 · 学士
-    dates: 2019.09 - 2023.06
+- school: 杭州电子科技大学
+  degree: 计算机技术 · 硕士阶段
+  dates: 2023.09 入学，毕业状态待确认
+- school: 杭州电子科技大学
+  degree: 计算机科学与技术 · 学士
+  dates: 2019.09 - 2023.06
 skills:
-  - label: 语言与开发
-    detail: Python、C++；项目涉及 TypeScript / Node.js、Go，以及 React、Vue.js、Electron.js 前端。
-  - label: AI 与文档
-    detail: PyTorch、OpenCV、OCR / VLM、结构化字段提取；具备算法复现、训练与推理部署经历。
-  - label: 服务与工程
-    detail: FastAPI、Flask；项目涉及 Temporal、PostgreSQL、SQLite、Docker、Kubernetes、Prometheus。
+- label: 方案与协作
+  detail: 业务需求拆解、AI 辅助开发、方案构思、沟通对齐与问题排查。
+- label: 技术背景
+  detail: Python、C++、PyTorch、OCR / VLM；项目涉及 TypeScript、Go、React、Vue、Temporal、Docker / K8s。
 recent_projects:
-  - name: 企业工作流基础设施 · Workflow OS
-    stack: React / TypeScript / Go / Temporal / PostgreSQL
-    dates: 参与时间待确认
-    context: 主要负责人；推进复杂企业流程的定义、编译、持久执行与运行观测。
-    bullets:
-      - 项目采用 WorkflowIR 统一流程定义，发布时固定版本和子流程依赖；Go 编译器生成不可变 ExecutionPlan，Temporal 承担持久调度与恢复。
-      - 支持分支、并发、循环、子流程与 Agent 节点；以 RuntimeEvent、ArtifactRef 关联运行图、节点输入输出和 Trace，支持过程追溯。
-      - 已形成 Studio → 编译 → 执行 → Observatory 核心闭环，完成本地演示及部分 staging shadow 验证；尚未全面生产切流。
-  - name: AI 审核结果观测台
-    stack: Node.js / Express / SQLite / SSE
-    dates: 参与时间待确认
-    context: 主要负责人；负责审核观测台，汇总上游运行历史、节点结果与原文件证据。
-    bullets:
-      - 项目通过运行索引增量同步与 Request ID 幂等入库归集任务，以 SSE 推送节点进展，低频同步作为断线兜底。
-      - 提供节点输入输出、耗时和 Token 用量视图；原文件按需读取，支持 PDF、Word、图片的页码坐标定位及表格单元格溯源。
-      - 以单体 Node.js 和 SQLite 提供轻量内网部署方案，连接任务提交、运行观测和业务复核。
+- name: 企业工作流编排与运行平台
+  stack: React / TypeScript / Go / Temporal / PostgreSQL
+  dates: 2026.08 - 至今
+  context: 主要负责人 · 业务流程建模 / 执行方案 / 运行排查
+  bullets:
+  - 围绕复杂业务流程的分支、并发与恢复需求，推进流程定义、版本发布和执行方案衔接；通过统一流程定义与不可变执行计划明确运行依据。
+  - 将运行图、节点输入输出和执行事件关联，便于沟通执行状态与定位异常；形成编辑、编译、执行、观测闭环，完成本地及部分 staging 验证。
+- name: AI 审核结果观测台
+  stack: Node.js / Express / SQLite / SSE
+  dates: 2026.08 - 至今
+  context: 主要负责人 · 审核过程可见 / 结果解释 / 证据定位
+  bullets:
+  - 面向审核过程难追踪、结论难回查的问题，组织任务历史、节点详情、耗时与 Token 用量视图，让运行状态和异常线索集中呈现。
+  - 以增量同步、幂等入库与实时推送衔接上游运行记录；提供原文件预览及页码、坐标、单元格溯源，支撑业务核对与问题排查。
+- name: 多模态文档感知与字段提取工作台
+  stack: Python / FastAPI / OpenCV / OCR / VLM
+  dates: 2026.08 - 至今
+  context: 合作参与 · 材料理解 / 字段依据 / 人工复核
+  bullets:
+  - 参与从原始材料到候选字段的处理方案，连接质量预检、OCR、按需视觉模型增强与规则字段提取，支持图片、PDF 和 Office 材料。
+  - 通过源文件、页码与证据块呈现字段依据，支持预览、复核和导出；候选结果交由业务复核，不直接执行最终业务判定。
 additional_projects:
-  - name: 文档解析与知识库 / 技能资产服务
-    stack: Python / OCR / 对象存储 / PostgreSQL / Docker
-    dates: 参与时间待确认
-    context: 主要负责人；general-doc-parser、nodesk-parser-service、knowledge-base-plugin、skill-hub-plugin。
-    bullets:
-      - 负责多格式文档解析相关项目，提供版面分析、OCR、跨页表格及多模态理解能力，支持对象存储承载解析资源。
-      - 负责独立知识库与技能资产服务项目；知识库包含处理流水线和部署资产，技能服务支持包校验、分级审查、不可变版本与固定版本消费合同。
-  - name: 视觉模型 MaaS 与 SLA 平台
-    stack: Python / YOLO / PaddleOCR / Kubernetes / Prometheus
-    dates: 参与时间待确认
-    context: 接手维护与后续更新；围绕已有视觉模型开展服务化与运维建设。
-    bullets:
-      - 项目将 CPU 平台入口、GPU 模型推理与 OCR 按资源职责拆分，提供公共推理 API、模型管理、运维面板和 Kubernetes 基础部署。
-      - 通过动态批处理、有限队列、缓存与快速失败控制过载，记录延迟、队列与 GPU 指标；评测压测调用公共推理接口并生成报告。
-  - name: 多模态文档感知与字段提取工作台
-    stack: Python / FastAPI / OpenCV / OCR / VLM
-    dates: 参与时间待确认
-    context: 合作参与者；perception_demo，面向图片、PDF 与 Office 材料的结构化处理。
-    bullets:
-      - 参与文档感知工作台项目，串联质量预检、OCR、按需 VLM 增强与规则字段提取，支持源文件预览、字段复核和导出。
-      - 结果保留源文件、页码和文本及视觉块依据；仅输出候选信息，不直接执行最终业务判定。
-maintenance_summary: 另接手 enterprise-agent-harness、enterprise-task-engine、flow-agent、task-platform，承担后续维护更新；各项目的具体改动与成果待补充。
+- name: 知识库与技能资产服务
+  stack: Python / OCR / 对象存储 / PostgreSQL / Docker
+  dates: 2026.10 - 至今
+  context: 主要负责人 · 服务边界 / 资产治理 / 接入方案
+  bullets:
+  - 围绕知识与技能资产的独立管理需求，推进知识库服务与技能资产服务建设，梳理处理流水线、部署依赖和运行时接入边界。
+  - 技能资产支持包校验、分级审查、不可变版本及固定版本消费合同；以明确的版本和审查记录支撑接入沟通与问题追溯。
+- name: 视觉模型 MaaS 与 SLA 平台
+  stack: Python / YOLO / PaddleOCR / Kubernetes / Prometheus
+  dates: 2026.06 - 2026.08
+  context: 接手维护与更新 · 模型服务化 / 运维排查
+  bullets:
+  - 接手已有视觉模型的服务化系统并持续维护更新；系统按 CPU 平台、GPU 推理与 OCR 拆分，提供推理接口、模型管理与运维面板。
+  - 围绕服务运行与过载问题开展排查；结合延迟、队列和 GPU 指标及公共接口压测报告分析运行表现，支持后续方案调整。
 historical_projects:
-  - name: 数字人实例管理与教学视频生成平台
-    stack: Python / Vue.js / PyTorch / Flask / NeRF
-    dates: 2024.09 起，结束时间待确认
-    context: 核心开发者；面向教师的数字人实例创建与教学视频制作。
-    bullets:
-      - 基于 PyTorch 复现 ER-NeRF、AD-NeRF、SyncTalk 等算法，集成模型训练流程，支持创建数字人实例。
-      - 基于 Flask 实现实例管理与视频生成业务；使用 Vue.js 构建前端，提供简易版与常规版视频生成模式。
-  - name: 基于深度学习的 3D 人脸重建系统
-    stack: Python / Electron.js / Three.js / PyTorch
-    dates: 2022.12 - 2023.05
-    context: 核心开发者；支持从单张人脸图像重建三维模型。
-    bullets:
-      - 复现 3DDFA_V2 与 MICA 算法，并利用知识蒸馏削减模型参数量、优化算法效率。
-      - 使用 Electron.js 搭建桌面端，嵌入 Three.js 实现交互式三维预览，支持图像上传及模型导入导出。
-  - name: 非特定类别图像前景主体分割算法与部署
-    stack: C++ / Python / PyTorch / LibTorch / OpenCV
-    dates: 2020.12 - 2021.04
-    context: 核心开发者；以离线 PC 可执行程序为交付成果。
-    bullets:
-      - 复现并改进 U2Net，完成模型训练；旧简历记录目标数据集 mIoU 为 83.8%，具体数据集与测试口径待补充。
-      - 使用 LibTorch 实现 C++ 推理部署；旧简历记录在 GTX 1080 Ti 上单图推理时间小于 5 秒，输入规格待补充。
+- name: 数字人实例管理与教学视频生成平台
+  stack: Python / Vue.js / PyTorch / Flask / NeRF
+  dates: 2024.09 - 2025.06
+  context: 核心开发者；面向教师的数字人实例创建与教学视频制作。
+  bullets:
+  - 复现并集成数字人算法及训练流程，基于 Flask 与 Vue.js 提供实例管理、视频生成和两种制作模式，面向教师教学视频制作需求。
+- name: 基于深度学习的 3D 人脸重建系统
+  stack: Python / Electron.js / Three.js / PyTorch
+  dates: 2022.12 - 2023.05
+  context: 核心开发者；支持从单张人脸图像重建三维模型。
+  bullets:
+  - 复现人脸重建算法并尝试知识蒸馏，使用 Electron.js 与 Three.js 提供图像上传、交互式三维预览及模型导入导出。
+- name: 非特定类别图像前景主体分割算法与部署
+  stack: C++ / Python / PyTorch / LibTorch / OpenCV
+  dates: 2020.12 - 2021.04
+  context: 核心开发者；以离线 PC 可执行程序为交付成果。
+  bullets:
+  - 复现并改进 U2Net，完成模型训练；旧简历记录目标数据集 mIoU 为 83.8%，具体数据集与测试口径待补充。
+  - 使用 LibTorch 实现 C++ 推理部署；旧简历记录在 GTX 1080 Ti 上单图推理时间小于 5 秒，输入规格待补充。
 awards:
-  - 2021 · 全国大学生数学建模竞赛浙江省二等奖
-  - 2021 · 美国大学生数学建模竞赛 Honorable 奖（名称沿用旧简历）
-  - 2020 · 第九届“认证杯”数学中国数学建模国际赛 Meritorious 奖
+- 2021 · 全国大学生数学建模竞赛浙江省二等奖
+- 2021 · 美国大学生数学建模竞赛 Honorable 奖（名称沿用旧简历）
+- 2020 · 第九届“认证杯”数学中国数学建模国际赛 Meritorious 奖
+internship_projects:
+- name: 通用文档解析服务
+  dates: 2025.06 - 2025.12
+  stack: Python / OCR / 多模态理解 / 对象存储
+  context: 主要负责人 · 算法实习阶段
+  bullets:
+  - 负责多格式文档解析项目，围绕版面、OCR 与表格处理需求提供结构化输出，支持文本、图片及表格内容解析与资源存储。
+- name: 知识中心文档解析服务
+  dates: 2025.10 - 2025.12
+  stack: Python / 结构化 Block / Redis / 隔离 Worker
+  context: 主要负责人 · 算法实习阶段
+  bullets:
+  - 负责面向知识库输入的文档解析服务，关注结构化结果、解析进程隔离与任务恢复，支持上层知识处理链路的接入和排障。
+# 暂不展示的维护项目；待补充具体职责与成果后，再加入显示项目列表。
+hidden_projects:
+- enterprise-agent-harness
+- enterprise-task-engine
+- flow-agent
+- task-platform

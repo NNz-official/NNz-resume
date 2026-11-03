@@ -1,30 +1,45 @@
 confirmed_by: 用户在当前对话中确认，2026-10-28
-note: 此表保存完整项目职责清单；简历仅选择重点展示，未据此认定为独立完成，也未将全部项目划入某一任职阶段。
+note: 实习项目仅为两项文档解析服务，其余近期项目均属于正式任职阶段；仓库名仅供内部映射，不显示在 PDF。
 maintenance:
-  - enterprise-agent-harness
-  - enterprise-task-engine
-  - flow-agent
-  - mcd-vision-maas
-  - task-platform
+- enterprise-agent-harness
+- enterprise-task-engine
+- flow-agent
+- mcd-vision-maas
+- task-platform
 primary_owner:
-  - general-doc-parser
-  - knowledge-base-plugin
-  - meione-result-reviewer
-  - meione-service
-  - meione-workflow-v1
-  - multimodal-perception-runtime
-  - nodesk-parser-service
-  - skill-hub-plugin
-  - workflow-os
+- general-doc-parser
+- knowledge-base-plugin
+- meione-result-reviewer
+- meione-service
+- meione-workflow-v1
+- multimodal-perception-runtime
+- nodesk-parser-service
+- skill-hub-plugin
+- workflow-os
 collaborator:
-  - perception_demo
+- perception_demo
 employment:
-  - company: 杭州没有桌子人工智能科技有限公司
-    role: 算法实习生
-    start: '2025-06'
-    end: '2025-12'
-  - company: 杭州没有桌子人工智能科技有限公司
-    role: Agent工程专家
-    start: '2026-06'
-    end: 至今
-pending: 各项目起止时间、所属任职阶段、具体改动与个人成果指标。
+- company: 杭州没有桌子人工智能科技有限公司
+  role: 算法实习生
+  start: 2025-06
+  end: 2025-12
+- company: 杭州没有桌子人工智能科技有限公司
+  role: Agent工程专家
+  start: 2026-06
+  end: 至今
+pending: 未单列项目的起止时间，以及各项目具体事件、排查案例和量化成果。
+updated_by: 用户于 2026-11-03 补充时间、职责侧重和隐藏项目要求
+project_periods:
+  general-doc-parser: 2025.06 - 2025.12
+  nodesk-parser-service: 2025.10 - 2025.12
+  knowledge-base-plugin: 2026.10 - 至今
+  skill-hub-plugin: 2026.10 - 至今
+  mcd-vision-maas: 2026.06 - 2026.08
+  perception_demo: 2026.08 - 至今
+  workflow-os: 2026.08 - 至今
+  meione-result-reviewer: 2026.08 - 至今
+hidden_from_resume:
+- enterprise-agent-harness
+- enterprise-task-engine
+- flow-agent
+- task-platform
