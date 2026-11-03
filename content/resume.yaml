@@ -1,0 +1,100 @@
+profile:
+  name: 周鸿展
+  role: 全栈开发 / AI 应用工程
+  phone: '18968783080'
+  email: 1119208620@qq.com
+  summary: 现任 Agent 工程专家，主要负责企业工作流、文档解析、知识库与技能资产服务等项目，并接手维护 Agent 执行与视觉模型服务系统。具有数字人、三维重建与计算机视觉背景，经历覆盖算法实现、服务端业务和前端交互。
+  draft_note: 内容核对版 · 教育状态与项目时间待补充
+  version: '2026.10'
+  footer_label: 内容核对版
+layout:
+  historical_project_count: 2
+work_experience:
+  - company: 杭州没有桌子人工智能科技有限公司
+    role: Agent 工程专家
+    dates: 2026.06 - 至今
+    summary: 主要负责工作流编排、文档解析、知识库、技能资产与 AI 审核相关项目；接手 Agent 执行平台和视觉模型服务的后续维护更新。
+  - company: 杭州没有桌子人工智能科技有限公司
+    role: 算法实习生
+    dates: 2025.06 - 2025.12
+    summary: ''
+education:
+  - school: 杭州电子科技大学
+    degree: 计算机技术 · 硕士阶段
+    dates: 2023.09 入学，毕业状态待确认
+  - school: 杭州电子科技大学
+    degree: 计算机科学与技术 · 学士
+    dates: 2019.09 - 2023.06
+skills:
+  - label: 语言与开发
+    detail: Python、C++；项目涉及 TypeScript / Node.js、Go，以及 React、Vue.js、Electron.js 前端。
+  - label: AI 与文档
+    detail: PyTorch、OpenCV、OCR / VLM、结构化字段提取；具备算法复现、训练与推理部署经历。
+  - label: 服务与工程
+    detail: FastAPI、Flask；项目涉及 Temporal、PostgreSQL、SQLite、Docker、Kubernetes、Prometheus。
+recent_projects:
+  - name: 企业工作流基础设施 · Workflow OS
+    stack: React / TypeScript / Go / Temporal / PostgreSQL
+    dates: 参与时间待确认
+    context: 主要负责人；推进复杂企业流程的定义、编译、持久执行与运行观测。
+    bullets:
+      - 项目采用 WorkflowIR 统一流程定义，发布时固定版本和子流程依赖；Go 编译器生成不可变 ExecutionPlan，Temporal 承担持久调度与恢复。
+      - 支持分支、并发、循环、子流程与 Agent 节点；以 RuntimeEvent、ArtifactRef 关联运行图、节点输入输出和 Trace，支持过程追溯。
+      - 已形成 Studio → 编译 → 执行 → Observatory 核心闭环，完成本地演示及部分 staging shadow 验证；尚未全面生产切流。
+  - name: AI 审核结果观测台
+    stack: Node.js / Express / SQLite / SSE
+    dates: 参与时间待确认
+    context: 主要负责人；负责审核观测台，汇总上游运行历史、节点结果与原文件证据。
+    bullets:
+      - 项目通过运行索引增量同步与 Request ID 幂等入库归集任务，以 SSE 推送节点进展，低频同步作为断线兜底。
+      - 提供节点输入输出、耗时和 Token 用量视图；原文件按需读取，支持 PDF、Word、图片的页码坐标定位及表格单元格溯源。
+      - 以单体 Node.js 和 SQLite 提供轻量内网部署方案，连接任务提交、运行观测和业务复核。
+additional_projects:
+  - name: 文档解析与知识库 / 技能资产服务
+    stack: Python / OCR / 对象存储 / PostgreSQL / Docker
+    dates: 参与时间待确认
+    context: 主要负责人；general-doc-parser、nodesk-parser-service、knowledge-base-plugin、skill-hub-plugin。
+    bullets:
+      - 负责多格式文档解析相关项目，提供版面分析、OCR、跨页表格及多模态理解能力，支持对象存储承载解析资源。
+      - 负责独立知识库与技能资产服务项目；知识库包含处理流水线和部署资产，技能服务支持包校验、分级审查、不可变版本与固定版本消费合同。
+  - name: 视觉模型 MaaS 与 SLA 平台
+    stack: Python / YOLO / PaddleOCR / Kubernetes / Prometheus
+    dates: 参与时间待确认
+    context: 接手维护与后续更新；围绕已有视觉模型开展服务化与运维建设。
+    bullets:
+      - 项目将 CPU 平台入口、GPU 模型推理与 OCR 按资源职责拆分，提供公共推理 API、模型管理、运维面板和 Kubernetes 基础部署。
+      - 通过动态批处理、有限队列、缓存与快速失败控制过载，记录延迟、队列与 GPU 指标；评测压测调用公共推理接口并生成报告。
+  - name: 多模态文档感知与字段提取工作台
+    stack: Python / FastAPI / OpenCV / OCR / VLM
+    dates: 参与时间待确认
+    context: 合作参与者；perception_demo，面向图片、PDF 与 Office 材料的结构化处理。
+    bullets:
+      - 参与文档感知工作台项目，串联质量预检、OCR、按需 VLM 增强与规则字段提取，支持源文件预览、字段复核和导出。
+      - 结果保留源文件、页码和文本及视觉块依据；仅输出候选信息，不直接执行最终业务判定。
+maintenance_summary: 另接手 enterprise-agent-harness、enterprise-task-engine、flow-agent、task-platform，承担后续维护更新；各项目的具体改动与成果待补充。
+historical_projects:
+  - name: 数字人实例管理与教学视频生成平台
+    stack: Python / Vue.js / PyTorch / Flask / NeRF
+    dates: 2024.09 起，结束时间待确认
+    context: 核心开发者；面向教师的数字人实例创建与教学视频制作。
+    bullets:
+      - 基于 PyTorch 复现 ER-NeRF、AD-NeRF、SyncTalk 等算法，集成模型训练流程，支持创建数字人实例。
+      - 基于 Flask 实现实例管理与视频生成业务；使用 Vue.js 构建前端，提供简易版与常规版视频生成模式。
+  - name: 基于深度学习的 3D 人脸重建系统
+    stack: Python / Electron.js / Three.js / PyTorch
+    dates: 2022.12 - 2023.05
+    context: 核心开发者；支持从单张人脸图像重建三维模型。
+    bullets:
+      - 复现 3DDFA_V2 与 MICA 算法，并利用知识蒸馏削减模型参数量、优化算法效率。
+      - 使用 Electron.js 搭建桌面端，嵌入 Three.js 实现交互式三维预览，支持图像上传及模型导入导出。
+  - name: 非特定类别图像前景主体分割算法与部署
+    stack: C++ / Python / PyTorch / LibTorch / OpenCV
+    dates: 2020.12 - 2021.04
+    context: 核心开发者；以离线 PC 可执行程序为交付成果。
+    bullets:
+      - 复现并改进 U2Net，完成模型训练；旧简历记录目标数据集 mIoU 为 83.8%，具体数据集与测试口径待补充。
+      - 使用 LibTorch 实现 C++ 推理部署；旧简历记录在 GTX 1080 Ti 上单图推理时间小于 5 秒，输入规格待补充。
+awards:
+  - 2021 · 全国大学生数学建模竞赛浙江省二等奖
+  - 2021 · 美国大学生数学建模竞赛 Honorable 奖（名称沿用旧简历）
+  - 2020 · 第九届“认证杯”数学中国数学建模国际赛 Meritorious 奖

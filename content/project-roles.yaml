@@ -1,0 +1,30 @@
+confirmed_by: 用户在当前对话中确认，2026-10-28
+note: 此表保存完整项目职责清单；简历仅选择重点展示，未据此认定为独立完成，也未将全部项目划入某一任职阶段。
+maintenance:
+  - enterprise-agent-harness
+  - enterprise-task-engine
+  - flow-agent
+  - mcd-vision-maas
+  - task-platform
+primary_owner:
+  - general-doc-parser
+  - knowledge-base-plugin
+  - meione-result-reviewer
+  - meione-service
+  - meione-workflow-v1
+  - multimodal-perception-runtime
+  - nodesk-parser-service
+  - skill-hub-plugin
+  - workflow-os
+collaborator:
+  - perception_demo
+employment:
+  - company: 杭州没有桌子人工智能科技有限公司
+    role: 算法实习生
+    start: '2025-06'
+    end: '2025-12'
+  - company: 杭州没有桌子人工智能科技有限公司
+    role: Agent工程专家
+    start: '2026-06'
+    end: 至今
+pending: 各项目起止时间、所属任职阶段、具体改动与个人成果指标。

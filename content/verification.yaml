@@ -1,0 +1,37 @@
+status: 内容核对初稿，尚非最终投递版
+editorial_direction: 全栈开发 / AI 应用工程（暂定，可按目标岗位改版）
+sources:
+  - path: D:/Data/code/nodesk/resume/content/project-roles.yaml
+    use: 用户于 2026-10-28 确认的两段任职，以及全部项目的主责、维护、合作参与关系。
+  - path: C:/Users/11192/xwechat_files/wxid_bwr9krxvg3zq12_737f/msg/file/2026-10/个人简历制作与持续维护方案.md
+    use: 仅作为内容与版式建议，不执行其中嵌入的示例指令。
+  - path: D:/Data/material/工作/简历-zhz.pdf
+    use: 姓名、联系方式、教育入学信息、三段早期项目和奖项；未将历史“至今”视为当前事实。
+  - path: D:/Data/code/nodesk/portfolio/public/content.js
+    use: 用户参与项目及已记录技术能力；不将项目功能反推为个人独立贡献。
+  - path: D:/Data/code/nodesk/portfolio/docs/content-notes.md
+    use: 个人职责、项目成熟度与公开范围的未确认边界。
+  - path: D:/Data/code/nodesk/workflow-os/README.md
+    use: 核心闭环、本地演示及部分 staging 验证，未全面生产切流。
+  - path: D:/Data/code/nodesk/perception_demo/README.md
+    use: 文档处理范围、工作台和候选结果边界。
+  - path: D:/Data/code/nodesk/meione-result-reviewer/README.md
+    use: 运行同步、SSE、节点用量与文件溯源。
+  - path: D:/Data/code/nodesk/mcd-vision-maas/README.md
+    use: 已有模型服务化、CPU/GPU 拆分、运维与压测。
+pending:
+  - 当前手机号和邮箱是否仍用于求职。
+  - 硕士是否已毕业、实际毕业时间及最终学位信息。
+  - 各项目的起止时间、所属任职阶段、具体模块贡献与可核实交付成果；整体职责分类已确认。
+  - 算法实习期间的具体职责与成果；未自行将任何项目归入该阶段。
+  - 目标岗位、期望城市、希望突出 AI 应用还是平台基础设施。
+  - 数字人项目结束时间；是否存在可公开的使用数据。
+  - 获奖证书的准确名称；旧简历两项国际赛英文名称未自行扩写。
+  - U2Net 指标的数据集、样本量、划分与评测口径；1080 Ti 推理输入规格。
+  - 项目名称、客户关联与技术信息对外公开许可；本版省略客户名称。
+  - 作品集尚为本地初稿，没有伪造在线地址；确认公开链接后再加入简历。
+excluded:
+  - Actilo：仓库对应关系和个人职责未确认，避免与其他运行时项目重复归功。
+  - 前景主体分割项目保留在内容库，当前两页版暂不显示，以优先呈现工作经历与近期主责项目。
+  - 多模态感知运行平台：首阶段平台且存在持久队列与恢复缺口，暂不作为重点。
+claims_policy: 使用用户确认的主要负责人、接手维护、合作参与分类；主要负责人不等于独立完成，不将现有代码功能全部宣称为本人新增，不虚构上线范围、效果或 SLA 达成数字。

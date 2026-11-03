@@ -1,0 +1,111 @@
+手动修改简历：改内容 → 保存 → 编译 → 看 PDF
+
+1. 日常只需修改一个内容文件
+
+用 VS Code 或其他纯文本编辑器打开：
+  D:/Data/code/nodesk/resume/content/resume.yaml
+
+profile：姓名、求职方向、电话、邮箱、个人概述、核对标记和版本日期。
+work_experience：工作经历，当前按时间倒序排列。
+education：学校、专业学位与时间。
+skills：技术能力，每项有 label（类别）和 detail（说明）。
+recent_projects：第一页重点项目。
+additional_projects：第二页近期项目。
+maintenance_summary：第二页的一行维护项目说明。
+historical_projects：早期项目素材库；默认只显示前两项。
+awards：奖项列表。
+
+例如，把求职方向改为 Agent 工程师，只改这一行：
+  role: Agent 工程师
+注意这是 profile 下的 role；work_experience 中的 role 是实际任职名称，不随求职方向改写。
+
+例如，确认硕士毕业信息后，把对应教育条目改为真实信息：
+  - school: 杭州电子科技大学
+    degree: 计算机技术 · 硕士
+    dates: '实际入学年月 - 实际毕业年月'
+不要照抄示例中的占位文字进正式投递版。
+
+2. 修改或新增工作经历
+
+复制 work_experience 下一个完整条目，放在列表最前面，再修改字段：
+  - company: 公司名称
+    role: 实际职位
+    dates: '2026.06 - 至今'
+    summary: 主要职责和已确认成果。
+
+summary 为空时写成两个单引号：
+    summary: ''
+该段说明就不会显示。公司、职位与日期仍会保留。
+
+3. 修改或新增项目
+
+每个项目使用完全相同的字段。复制完整条目到 recent_projects 或 additional_projects 下：
+  - name: 项目名称
+    stack: Python / FastAPI / PostgreSQL
+    dates: '真实开始年月 - 真实结束年月'
+    context: 主要负责人；简要说明项目目标与本人负责范围。
+    bullets:
+      - 第一条，写清本人做了什么，以及解决的问题。
+      - 第二条，写交付成果或有证据支持的效果。
+
+一条 bullet 就是 PDF 中一个圆点。新增圆点行即可增加内容。
+删除项目时删除从“- name”到它全部 bullets 的完整块。
+调整项目顺序时移动整个块，保留缩进。
+从第一页移到第二页：把整个项目块从 recent_projects 移到 additional_projects。
+重点项目通常保留 2-3 条说明；写清责任和结果，避免堆叠全部接口与组件名。
+维护项目写清接手后的改动，不把原系统全部能力当作自己的新增成果。
+
+content/project-roles.yaml 记录了全部项目的职责分类，但不会直接显示在 PDF。
+content/verification.yaml 是事实核对清单，也不会直接显示在 PDF。
+若要让新增事实出现在简历上，仍需修改 resume.yaml。
+
+4. YAML 的三个常见问题
+
+缩进只用空格，不使用 Tab；按现有内容的缩进对齐。
+冒号后留一个空格，例如 name: 周鸿展。
+文本包含“冒号+空格”、井号或其他特殊符号时，建议整段用单引号括起来：
+    context: '主要负责人：负责文档解析与服务化。'
+单引号文本中需要单引号本身时连续写两个，例如 'Agent''s runtime'。
+所有日期建议加引号；电话已用引号包裹，避免被当成数字处理。
+保存时使用 UTF-8 编码。普通字段中的星号不会变成加粗，这些内容作为纯文本显示。
+
+5. 重新生成 PDF
+
+在 PowerShell 执行：
+  & 'D:/Data/code/nodesk/resume/build.ps1'
+
+脚本会自动找到已安装的 Typst，输出到：
+  D:/Data/code/nodesk/resume/output/pdf/周鸿展-简历-内容核对版.pdf
+
+若 PowerShell 的脚本执行策略阻止运行，可直接使用 Typst，不必调整系统策略：
+  Set-Location 'D:/Data/code/nodesk/resume'
+  typst compile resume.typ 'output/pdf/周鸿展-简历-内容核对版.pdf'
+
+希望每次保存 YAML 后自动编译，执行：
+  & 'D:/Data/code/nodesk/resume/build.ps1' -Watch
+然后让该 PowerShell 窗口保持运行，编辑并保存 resume.yaml，PDF 会自动更新。
+也可以直接执行 typst watch：
+  Set-Location 'D:/Data/code/nodesk/resume'
+  typst watch resume.typ 'output/pdf/周鸿展-简历-内容核对版.pdf'
+按 Ctrl+C 停止监听。PDF 阅读器可能需要刷新；报文件占用时先关闭 PDF 再重新编译。
+
+6. 页数和版式怎么调
+
+resume.typ 管版式，resume.yaml 管内容。日常不要改模板中的函数、循环与括号。
+当前模板明确在两个重点项目之后换到第二页；新增内容过多可能变成三页。
+先精简重复说明，或将项目移动到第二页，不要先缩小正文字号。
+layout.historical_project_count 控制显示前几个早期项目，当前为 2；改成 3 会显示主体分割项目，但可能增加页数。
+需要调整颜色：打开 resume.typ，修改 accent 的十六进制色值。
+需要调整字体或字号：修改 #set text 中的 font 和 size。改动后务必看 PDF。
+
+7. 准备投递前
+
+补齐真实教育状态和项目日期，删除对应的“待确认”文字。
+profile.draft_note 改成 '' 可清空顶部核对提示。
+profile.footer_label 可改为“简历”，profile.version 改为对应版本年月。
+为正式版本使用独立输出名，无需改模板：
+  Set-Location 'D:/Data/code/nodesk/resume'
+  typst compile resume.typ 'output/pdf/周鸿展-简历.pdf'
+
+打开最终 PDF，检查页数、段落是否被挤出页面、日期是否换行，以及姓名电话邮箱是否准确。
+试着复制一段 PDF 文字，确认文本正常。新改内容特别注意项目职责与成果依据。
